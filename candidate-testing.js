@@ -14,8 +14,9 @@ let candidateAnswers = "";
 
 
 function askForName() {
-  // TODO 1.1b: Ask for candidate's name //
-  candidateName = input.question("Please enter your name.");
+  // TODO 1.1b: Ask for candidate's name 
+    // We ask for the canditae's name then store it in the candidateName variable.
+  candidateName = input.question("Please enter your name. ");
 
 }
 
@@ -28,8 +29,10 @@ function askQuestion() {
 
 function gradeQuiz(candidateAnswers) {
 
-  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly // 
-  if (candidateAnswer === correctAnswer){
+  // TODO 1.2c: Let the candidate know if they have answered the question correctly or incorrectly 
+
+    // Here we have an if statement to check if the candidateAnswer is correct, if it is it congraulates them, otherwise it lets them know it was incorrect.
+  if (candidateAnswer.toLowerCase() === correctAnswer.toLowerCase()){ // Please ignore my submission comment, I went back and added the toLowerCase validation. 
     console.log(`Congratulations ${candidateName}, ${candidateAnswer} is correct!`)
   } else {
     console.log(`Sorry ${candidateName}, ${candidateAnswer} is incorrect :( `)
@@ -43,7 +46,7 @@ function gradeQuiz(candidateAnswers) {
 
 function runProgram() {
   askForName();
-  // TODO 1.1c: Ask for candidate's name //
+  // TODO 1.1c: Ask for candidate's name // 
   console.log(`Greetings ${candidateName}!`)
 
   askQuestion();
