@@ -59,8 +59,8 @@ function gradeQuiz(candidateAnswers) {
   } else {
     status = "FAILED";
   }
-  // grade = `>>> Overall Grade: ${score}% (${numOfCorrectAnswers} of ${correctAnswers.length} responses correct) <<< \n>>> Status: ${status} <<<`;
-  grade = score;
+  grade = `>>> Overall Grade: ${score}% (${numOfCorrectAnswers} of ${correctAnswers.length} responses correct) <<< \n>>> Status: ${status} <<<`;
+  
   return grade;
 }
 
