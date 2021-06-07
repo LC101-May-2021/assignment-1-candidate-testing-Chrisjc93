@@ -32,8 +32,8 @@ candidateName = splitName.join(" ");
 function askQuestion() {
   // TODO 1.2b: Ask candidate the question and assign the response as candidateAnswer //
   for(let i = 0; i < questions.length; i++){
-    candidateAnswers[i] = (input.question(`${[i+ 1]}) ${questions[i]} \nYour Answer: `));
-    console.log(`Correct Answer: ${correctAnswers[i]} \n`)
+    candidateAnswers[i] = (input.question(`${[i+ 1]} ${questions[i]} \nYour Answer: `)).trim();
+    console.log(`Correct Answer: ${correctAnswers[i]} \n`);
   }
 
 }
@@ -59,7 +59,7 @@ function gradeQuiz(candidateAnswers) {
   } else {
     status = "FAILED";
   }
-  grade = `>>> Overall Grade: ${score}% (${numOfCorrectAnswers} of ${correctAnswers.length} responses correct) <<< \n>>> Status: ${status} <<<`;
+  grade = `>>> Overall Grade: ${score}% (${numOfCorrectAnswers} of ${correctAnswers.length} responses correct) <<< \n>>> Status: ${status} <<<`; // I think here is why the test fails, it wants the score not this string.
   
   return grade;
 }
@@ -67,7 +67,7 @@ function gradeQuiz(candidateAnswers) {
 function runProgram() {
   askForName();
   // TODO 1.1c: Ask for candidate's name // 
-  console.log(`Candidate Name: ${candidateName}`)
+  console.log(`Candidate Name: ${candidateName}`);
 
   askQuestion();
   console.log(gradeQuiz(this.candidateAnswers));
